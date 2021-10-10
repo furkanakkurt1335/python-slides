@@ -1,5 +1,6 @@
 # CmpE150 - Fall 2021 - Lab Slides
 
+* [Lab1](https://bouncmpe150.github.io/python-slides/lab1.html)
 
 ## Credits
 
