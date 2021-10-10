@@ -1,4 +1,4 @@
-# CMPE150 - FALL2021 - Lab1 Material
+# CmpE150 - Fall 2021 - Lab1 Material
 
 * Introduction
 * Variables
