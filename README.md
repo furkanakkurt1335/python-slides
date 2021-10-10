@@ -1,11 +1,4 @@
-# CmpE150 - Fall 2021 - Lab1 Material
-
-* Introduction
-* Variables
-* Expression 
-* Statements
-* Functions
-
+# CmpE150 - Fall 2021 - Lab Slides
 
 
 ## Credits
