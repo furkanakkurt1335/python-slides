@@ -9,7 +9,6 @@
 * Functions
 
 
-
 ## Contributors
 
 * [Gökçe Uludoğan](gokceuludogan.github.io)
