@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 Lab2</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+### Outline
+* How functions work 
+* How to define your function
+* How to pass arguments to function
+* How to return data from function            
+        </section>
+        <section data-markdown>
+### Functions
+* In math:  `z = f(x, y)`
+* In programming: a block of code that perfoms a specific task 
+* Python functions
+    * Built-in 
+        * E.g. `print()`, `input()`
+    * User defined
+         </section>
+        <section data-markdown> 
+### Built-in functions
+* Defined somewhere
+* To use them, all you need to know is the interface of that function.
+    * What **arguments** (if any) it takes
+    * What **values** (if any) it returns
+
+    </section>
+    <section data-markdown>
+### Importance of Functions
+* Abstraction
+    * You don't need to worry about how it works
+* Reusability
+    * You can use a function over and over again
+* Modularity
+    * Allows to break down complex processes into smaller steps
+    </section>
+
+    <section data-markdown style='font-size: 0.8em;'>
+### Function Definition and Call
+```python
+def &lt;function_name&gt;([&lt;parameters&gt;]):
+    &lt;statement(s)&gt;
+
+&lt;function_name&gt;([&lt;arguments&gt;])
+
+```     
+
+
+| Component         | Meaning                                                      |
+| ----------------- | ------------------------------------------------------------ |
+| `def`             | The keyword for defining a function |
+| `&lt;function_name&gt;` | A valid function name           |
+| `&lt;parameters&gt;`    | An optional, comma-separated list of parameters |
+| `&lt;statement(s)&gt;`  | A block of valid statements                           |
+  
+
+    </section>
+         <section data-auto-animate>
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+                    <h4>Code</h4>
+<pre class='python'><code data-line-numbers="1-3,5-7">def f():
+    s = '-- Inside f()'
+    print(s)
+
+print('Before calling f()')
+f()
+print('After calling f()')
+</code></pre>
+                </div>
+            </div>
+    </section>
+     <section data-auto-animate>
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+                    <h4>Code</h4>
+<pre class='python'><code data-line-numbers="1-3,5-7">def f():
+    s = '-- Inside f()'
+    print(s)
+
+print('Before calling f()')
+f()
+print('After calling f()')
+</code></pre>
+<h4>Output</h4>
+<pre class='python'><code>Before calling f()
+-- Inside f()
+After calling f()
+</code></pre>
+                </div>
+            </div>
+    </section>
+    <section data-auto-animate>
+
+            <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+                    <h4>Code</h4>
+<pre class='python'><code data-line-numbers="1-3,5-7">def f():
+    s = '-- Inside f()'
+    print(s)
+
+print('Before calling f()')
+f()
+print('After calling f()')
+</code></pre>
+<h4>Output</h4>
+<pre class='python'><code>Before calling f()
+-- Inside f()
+After calling f()
+</code></pre>
+                </div>
+
+                <div class="col" style=" flex: 1;">
+                    <h4>Flow</h4>
+                    <img src="https://files.realpython.com/media/t.f3e2000ecb56.png">
+                </div>
+            </div>
+
+    </section>
+        <section data-markdown data-auto-animate>
+### Parameters & Arguments
+```python
+def f(qty, item, price):
+    print(qty, item, 'cost', price)
+
+f(6, 'apples', 8.75)
+```
+#### Output
+```
+6 apples cost 8.75
+```
+    </section>
+    <section data-markdown data-auto-animate>
+### Parameters & Arguments
+```python
+def f(qty, item, price):
+    print(qty, item, 'cost', price)
+
+f(6, 'apples', 8.75)
+```
+
+| Parameter |      | Argument  |
+| --------- | ---- | --------- |
+| `qty`     | ←    | `6`       |
+| `item`    | ←    | `apples` |
+| `price`   | ←    | `8.75`    |
+    </section>
+    <section data-markdown>
+### Parameters & Arguments
+```python
+def f(qty, item, price):
+    print(qty, item, 'cost', price)
+```
+
+The order matters:
+```python 
+f('apples', 8.75, 6)
+```
+```
+apples 8.75 cost 6
+```
+    </section>
+    <section data-markdown>
+### Parameters & Arguments
+
+* The number of arguments & parameters must be the same:
+    * Too few arguments
+        ```python
+        f(6, 'apples')
+        ```
+        ```
+        Traceback (most recent call last):
+          File "<pyshell#6>", line 1, in <module>
+            f(6, 'apples')
+        TypeError: f() missing 1 required positional argument: 'price'
+        ```
+        
+    </section>
+        <section data-markdown>
+### Parameters & Arguments
+
+* The number of arguments & parameters must be the same:
+    * Too  many arguments
+        ```python
+        f(6, 'apples', 8.75, 'oranges')
+        ```
+        ```
+        Traceback (most recent call last):
+          File "<pyshell#5>", line 1, in <module>
+            f(6, 'apples', 8.75, 'oranges')
+        TypeError: f() takes 3 positional arguments but 4 were given
+        ```
+        
+    </section>
+
+       <section data-markdown data-auto-animate>
+### Parameters & Arguments
+```python
+def update_value(x):
+    x = 100 
+    
+a = 10
+update_value(a)
+print(a)
+```
+        </section> 
+        <section data-markdown data-auto-animate>
+### Parameters & Arguments
+```python
+def update_value(x):
+    x = 100 
+    
+a = 10
+update_value(a)
+print(a)
+```
+#### Output
+```
+10
+```
+
+        </section>
+        <section>
+<h3>Execution</h3>           
+<iframe width="1000" height="650" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20update_value%28x%29%3A%0A%20%20%20%20x%20%3D%20100%20%0A%20%20%20%20%0Aa%20%3D%2010%0Aupdate_value%28a%29%0Aprint%28a%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+        </section>
+        <section data-markdown>
+### Return Statement
+* To pass data back to the caller
+* Update value:
+    ```python
+    def update_value(x):
+        x = 100
+        return x 
+    
+    a = 10
+    a = update_value(a)
+    print(a)
+    ```
+
+
+        </section>
+        <section>
+        <h3>Execution</h3>
+        <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=def%20update_value%28x%29%3A%0A%20%20%20%20x%20%3D%20100%20%0A%20%20%20%20return%20x%0A%20%20%20%20%0Aa%20%3D%2010%0Aa%20%3D%20update_value%28a%29%0Aprint%28a%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>   
+        </section>
+      
+
+	<section>
+		<img src='https://i.imgflip.com/4180at.jpg'> 
+	</section>
+
+	<section>
+		<h3>References</h3>
+		<ol>
+			<li>
+                <a href="https://pythontutor.com/">https://pythontutor.com/</a> 
+			</li>
+            <li>
+                <a href="https://realpython.com/defining-your-own-python-function/">https://realpython.com/defining-your-own-python-function/</a>
+            </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
