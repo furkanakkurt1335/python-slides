@@ -304,12 +304,11 @@ a = 2
 ### Types of Namespaces
 1. Built-In
 2. Global
-3. Enclosing
-4. Local
+3. Local
   </section>
   
   <section data-markdown>
-### The Built-In Namespace
+### 1. The Built-In Namespace
 * Contains the names of all of Python’s built-in objects
 * Available at all times when Python is running 
   * Object types: int, float, bool, str, 
@@ -317,7 +316,7 @@ a = 2
   </section>
   
   <section data-markdown>
-### The Global Namespace
+### 2. The Global Namespace
 * Any names defined in the main program
   * Created when main program body starts,
   * Remains until the program terminates
@@ -325,12 +324,10 @@ a = 2
   </section>
   
   <section data-markdown>
-### Local and Enclosing Namespaces
+### 3. The Local Namespace
 * A new namespace is created whenever a function executes
   * Local to the function
   * Remains until the function terminates
-* Functions may not be independent from one another
-  * You can also define one function inside another
   </section>
   
   <section data-auto-animate>
@@ -338,20 +335,13 @@ a = 2
 
              <div class="col" style=" flex: 1;">
                  <h4>Code</h4>
-                 <pre class='python'><code data-line-numbers="1-2,4-7,9,11-12,14">def f():
+                 <pre class='python'><code data-line-numbers="1-4,6-7">def f():
     print('Start f()')
-                   
-    def g():
-         print('Start g()')
-         print('End g()')
-         return
-
-    g()
-
     print('End f()')
     return
     
 f()
+print("Main program continues")
                  </code></pre>
              </div>
          </div>
@@ -362,26 +352,18 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-7,9,11-12,14">def f():
+               <pre class='python'><code data-line-numbers="1-4,6-7">def f():
   print('Start f()')
-                 
-  def g():
-       print('Start g()')
-       print('End g()')
-       return
-
-  g()
-
   print('End f()')
   return
   
 f()
+print("Main program continues")
                </code></pre>
 <h4>Output</h4>
 <pre class='python'><code>Start f()
-Start g()
-End g()
 End f()
+Main program continues
 </code></pre>
            </div>
        </div>
@@ -392,56 +374,18 @@ End f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-7,9,11-12,14">def f():
+               <pre class='python'><code data-line-numbers="1-4,6-7">def f():
   print('Start f()')
-                 
-  def g():
-       print('Start g()')
-       print('End g()')
-       return
-
-  g()
-
   print('End f()')
   return
   
 f()
+print("Main program continues")
                </code></pre>
 <ul>
-  <li><p style="font-size:25px"><strong>Lines 1 to 12</strong> define f(), the <strong>enclosing</strong> function.</p></li>
-  <li><p style="font-size:25px"><strong>Lines 4 to 7</strong> define g(), the <strong>enclosed</strong> function.</p></li>
-  <li><p style="font-size:25px">On <strong>line 14</strong>, the main program calls f().</p></li>
-  <li><p style="font-size:25px">On <strong>line 9</strong>, f() calls g().</p></li>
-</ul>
-           </div>
-       </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-           <div class="col" style=" flex: 1;">
-               <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-7,9,11-12,14">def f():
-  print('Start f()')
-                 
-  def g():
-       print('Start g()')
-       print('End g()')
-       return
-
-  g()
-
-  print('End f()')
-  return
-  
-f()
-               </code></pre>
-<ul>
+  <li><p style="font-size:25px">The namespace created for the main program is the <strong>global namespace</strong>.</p></li>
   <li><p style="font-size:25px">When the main program calls f(), Python creates a new namespace for f().</p></li>
-  <li><p style="font-size:25px">When f() calls g(), g() gets its own separate namespace.</p></li>
-  <li><p style="font-size:25px">The namespace created for g() is the <strong>local namespace</strong>.</p></li>
-  <li><p style="font-size:25px">The namespace created for f() is the <strong>enclosing namespace</strong>.</p></li>
+  <li><p style="font-size:25px">The namespace created for f() is the <strong>local namespace</strong>.</p></li>
 </ul>
            </div>
        </div>
@@ -455,46 +399,10 @@ f()
               <p>If your code refers to the name x,  Python searches for x in the following namespaces in the order shown:</p>
               <ol>
                 <li><strong>L</strong>ocal</li>
-                <li><strong>E</strong>nclosing</li>
                 <li><strong>G</strong>lobal</li>
                 <li><strong>B</strong>uilt-in</li>
               </ol>
-            </div>
-        </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-            <div class="col" style=" flex: 1;">
-              <h3>Variable Scope</h3>
-              <p>If your code refers to the name x,  Python searches for x in the following namespaces in the order shown:</p>
-              <ol>
-                <li><strong>L</strong>ocal: <p style="font-size:25px"> Python first searches in the innermost scope that’s local to that function.</p></li>
-                <li><strong>E</strong>nclosing: <p style="font-size:25px"> If x isn't in the local scope, but appears in a function that is inside another function, the interpreter searches in the enclosing function’s scope.</p></li>
-                <li><strong>G</strong>lobal: <p style="font-size:25px"> If x isn't in either, then the interpreter looks in the global scope next.</p></li>
-                <li><strong>B</strong>uilt-in: <p style="font-size:25px"> At last the interpreter tries the built-in scope.</p></li>
-              </ol>
-            </div>
-        </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-            <div class="col" style=" flex: 1;">
-              <h3>Variable Scope</h3>
-              <ol>
-                <li><strong>L</strong>ocal</li>
-                <li><strong>E</strong>nclosing</li>
-                <li><strong>G</strong>lobal</li>
-                <li><strong>B</strong>uilt-in</li>
-              </ol>
-            </div>
-
-            <div class="col" style=" flex: 1;">
-                <h4>LEGB rule</h4>
-                <img src="https://files.realpython.com/media/t.fd7bd78bbb47.png" width="300" height="300">
+              <p>Search using the <strong>LGB</strong> rule</p>
             </div>
         </div>
 </section>
@@ -504,13 +412,10 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-5,7,9">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4,6">x = 'global'
 def f():
                  
-  def g():
-    print(x)
-       
-  g()
+  print(x)
 
 f()
                </code></pre>
@@ -523,13 +428,10 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-5,7,9">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4,6">x = 'global'
 def f():
                  
-  def g():
-    print(x)
-       
-  g()
+  print(x)
 
 f()
                </code></pre>
@@ -544,13 +446,10 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-2,4-5,7,9">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4,6">x = 'global'
 def f():
                  
-  def g():
-    print(x)
-       
-  g()
+  print(x)
 
 f()
                </code></pre>
@@ -558,7 +457,7 @@ f()
                <pre class='python'><code>global</code></pre>
 <ul>
   <li><p style="font-size:25px">x is defined in only one location.</p></li>
-  <li><p style="font-size:25px">It’s outside both f() and g(), so it's in the <strong>global scope</strong></p></li>
+  <li><p style="font-size:25px">It’s outside f(), so it's in the <strong>global scope</strong></p></li>
 </ul>
            </div>
        </div>
@@ -569,15 +468,12 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-6,8,10">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4-5,7">x = 'global'
 def f():
-  x = 'enclosing'
-         
-  def g():
-    print(x)
-       
-  g()
 
+  x = 'local'     
+  print(x)
+       
 f()
                </code></pre>
            </div>
@@ -589,88 +485,12 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-6,8,10">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4-5,7">x = 'global'
 def f():
-  x = 'enclosing'
-         
-  def g():
-    print(x)
+
+  x = 'local'     
+  print(x)
        
-  g()
-
-f()
-               </code></pre>
-               
-         <h4>Output</h4>
-         <pre class='python'><code>enclosing</code></pre>
-           </div>
-       </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-           <div class="col" style=" flex: 1;">
-               <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-6,8,10">x = 'global'
-def f():
-  x = 'enclosing'
-         
-  def g():
-    print(x)
-       
-  g()
-
-f()
-               </code></pre>
-               
-         <h4>Output</h4>
-         <pre class='python'><code>enclosing</code></pre>
-   <ul>
-     <li><p style="font-size:25px"><strong>Line 1</strong> defines x in the global scope.</p></li>
-     <li><p style="font-size:25px"><strong>Line 3</strong> defines x again in the enclosing scope.</p></li>
-     <li><p style="font-size:25px">According to the LEGB rule, the interpreter finds the value from the <strong>enclosing space</strong> before looking in the global space.</p></li>
-   </ul>
-           </div>
-       </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-           <div class="col" style=" flex: 1;">
-               <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-7,9,11">x = 'global'
-def f():
-  x = 'enclosing'
-         
-  def g():
-    x = 'local'
-    print(x)
-       
-  g()
-
-f()
-               </code></pre>
-           </div>
-       </div>
-</section>
-
-<section data-auto-animate>
-        <div class="container" style=" display: flex;"> <!--text-align: left;-->
-
-           <div class="col" style=" flex: 1;">
-               <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-7,9,11">x = 'global'
-def f():
-  x = 'enclosing'
-         
-  def g():
-    x = 'local'
-    print(x)
-       
-  g()
-
 f()
                </code></pre>
                
@@ -685,16 +505,12 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1-3,5-7,9,11">x = 'global'
+               <pre class='python'><code data-line-numbers="1-2,4-5,7">x = 'global'
 def f():
-  x = 'enclosing'
-         
-  def g():
-    x = 'local'
-    print(x)
-       
-  g()
 
+  x = 'local'     
+  print(x)
+       
 f()
                </code></pre>
                
@@ -702,9 +518,8 @@ f()
          <pre class='python'><code>local</code></pre>
    <ul>
      <li><p style="font-size:25px"><strong>Line 1</strong> defines x in the global scope.</p></li>
-     <li><p style="font-size:25px"><strong>Line 3</strong> defines x again in the enclosing scope.</p></li>
-     <li><p style="font-size:25px"><strong>Line 6</strong> defines x a third time in the scope that’s local to g().</p></li>
-     <li><p style="font-size:25px">According to the LEGB rule, the interpreter finds the value from the <strong>local space</strong> before looking in the enclosing and global space.</p></li>
+     <li><p style="font-size:25px"><strong>Line 4</strong> defines x again in the local scope.</p></li>
+     <li><p style="font-size:25px">According to the LGB rule, the interpreter finds the value from the <strong>local space</strong> before looking in the global space.</p></li>
    </ul>
            </div>
        </div>
@@ -715,12 +530,81 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1,3-4,6,8">def f():
-         
-  def g():
-    print(x)
-       
-  g()
+               <pre class='python'><code data-line-numbers="1-2,4-5,7-8">x = 'global'
+def f():
+
+  x = 'local'
+  print(x)
+
+f()
+print(x)
+               </code></pre>
+           </div>
+       </div>
+</section>
+
+<section data-auto-animate>
+        <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+           <div class="col" style=" flex: 1;">
+               <h4>Code</h4>
+               <pre class='python'><code data-line-numbers="1-2,4-5,7-8">x = 'global'
+def f():
+
+  x = 'local'
+  print(x)
+
+f()
+print(x)
+               </code></pre>
+               
+         <h4>Output</h4>
+         <pre class='python'><code>local
+global</code></pre>
+           </div>
+       </div>
+</section>
+
+<section data-auto-animate>
+        <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+           <div class="col" style=" flex: 1;">
+               <h4>Code</h4>
+               <pre class='python'><code data-line-numbers="1-2,4-5,7-8">x = 'global'
+def f():
+
+  x = 'local'
+  print(x)
+
+f()
+print(x)
+               </code></pre>
+               
+         <h4>Output</h4>
+         <pre class='python'><code>local
+global</code></pre>
+<ul>
+  <li><p style="font-size:25px"><strong>Line 1</strong> defines x in the global scope.</p></li>
+  <li><p style="font-size:25px"><strong>Line 4</strong> defines x again in the local scope.</p></li>
+  <li><p style="font-size:25px">When f() is called, the local namespace of f() is active, therefore x = "local".</p></li>
+  <li><p style="font-size:25px">After f() terminates, the local namespace of f() terminates too. Therefore, back in the main program, x = "global".</p></li>
+</ul>
+           </div>
+       </div>
+</section>
+
+<section>
+<h3>Execution</h3>      
+<iframe width="1000" height="650" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=x%20%3D%20'global'%0Adef%20f%28%29%3A%0A%20%0A%20%20x%20%3D%20'local'%0A%20%20print%28x%29%0A%20%0Af%28%29%0Aprint%28x%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>     
+</section>
+
+<section data-auto-animate>
+        <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+           <div class="col" style=" flex: 1;">
+               <h4>Code</h4>
+               <pre class='python'><code data-line-numbers="1-2,4">def f():
+  print(x)
 
 f()
                </code></pre>
@@ -733,21 +617,17 @@ f()
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1,3-4,6,8">def f():
-         
-  def g():
-    print(x)
-       
-  g()
+               <pre class='python'><code data-line-numbers="1-2,4">def f():
+  print(x)
 
 f()
                </code></pre>
                
          <h4>Output</h4>
          <pre class='python'><code>Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 6, in f
-  File "<stdin>", line 4, in g
+  File "&lt;stdin>", line 4, in &lt;module>
+  File "&lt;stdin>", line 2, in f
+  print(x)
 NameError: name 'x' is not defined</code></pre>
            </div>
        </div>
@@ -758,21 +638,17 @@ NameError: name 'x' is not defined</code></pre>
 
            <div class="col" style=" flex: 1;">
                <h4>Code</h4>
-               <pre class='python'><code data-line-numbers="1,3-4,6,8">def f():
-         
-  def g():
-    print(x)
-       
-  g()
+               <pre class='python'><code data-line-numbers="1-2,4">def f():
+  print(x)
 
 f()
                </code></pre>
                
          <h4>Output</h4>
          <pre class='python'><code>Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "<stdin>", line 6, in f
-  File "<stdin>", line 4, in g
+  File "&lt;stdin>", line 4, in &lt;module>
+  File "&lt;stdin>", line 2, in f
+  print(x)
 NameError: name 'x' is not defined</code></pre>
    <ul>
      <li><p style="font-size:25px">x isn't defined at all.</p></li>
