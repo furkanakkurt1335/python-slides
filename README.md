@@ -5,6 +5,9 @@
   * Statements
   * Functions (Briefly)
 
+* [Lab2](https://bouncmpe150.github.io/python-slides/lab2.html)
+  * Functions
+
 
 ## Credits
 
