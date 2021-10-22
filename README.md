@@ -7,6 +7,9 @@
 
 * [Lab2](https://bouncmpe150.github.io/python-slides/lab2.html)
   * Functions
+  
+* [Lab3](https://bouncmpe150.github.io/python-slides/lab3.html)
+  * For Loops
 
 
 ## Credits
