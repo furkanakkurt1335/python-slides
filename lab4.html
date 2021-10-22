@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 Lab4</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+### Comparison Operators
+![](https://www.devopsschool.com/blog/wp-content/uploads/2020/08/relational-operator-in-python.png)
+        </section>
+        <section data-markdown>
+### Logic Operators
+| Operator | Example | Meaning                                                                   |
+|----------|---------|---------------------------------------------------------------------------|
+| not      | not x   | True if x is False. False if x is True                                    |
+| or       | x or y  | True if either x or y is True. False otherwise                            |
+| and      | x and y | True if both x and y are True. False otherwise                            |
+        </section>
+        <section data-markdown>
+### Conditional Statements
+* Change the order of execution with conditional statements.
+* `If` 
+* `Elif`
+* `Else`
+        </section>
+        <section>
+<h3>if Statement</h3>
+<div class="container" style=" display: flex;"> <!--text-align: left;-->
+  <div class="col" style=" flex: 1;">
+    <ul style="font-size: .8em">
+      <li>Syntax:
+    <pre class="python"><code>
+if test_expression:
+      statement(s)      
+    </code></pre> </li>
+    <li>test_expression: condition</li>
+    <li>If the condition is satisfied, statement(s) is executed.</li>
+    <li>Otherwise, statement(s) is skipped over. </li>
+  </ul>
+  </div>
+  <div class="col" style=" flex: 1;">
+    <img src="https://cdn.programiz.com/sites/tutorial2program/files/Python_if_statement.jpg">
+  </div>
+</div>
+  </section>
+  <section data-markdown>              
+### Example
+```python
+num = int(input())
+if num > 0:
+    print(num, "is a positive number.")
+print("This is always printed.")
+```
+* For num = 10, the output is:
+```
+10 is a positive number.
+This is always printed.
+```
+* For num = -3, the output is:
+```
+This is always printed.
+```
+
+  </section>
+        <section>
+<h3>if..else Statement</h3>
+<div class="container" style=" display: flex;"> <!--text-align: left;-->
+  <div class="col" style=" flex: 1;">
+    <ul style="font-size: .8em">
+      <li>Syntax:
+    <pre class="python"><code>
+if test expression:
+    statements of if
+else:
+    statements of else 
+    </code></pre> </li>
+    <li>test_expression: condition</li>
+    <li>If the condition is satisfied, statement(s) of if is executed.</li>
+    <li>Otherwise, statement(s) of else is executed. </li>
+  </ul>
+  </div>
+  <div class="col" style=" flex: 1;">
+    <img src="https://cdn.programiz.com/sites/tutorial2program/files/Python_if_else_statement.jpg">
+  </div>
+</div>
+  </section>
+
+  <section data-markdown>              
+### Example
+```python
+num = int(input())
+if num >= 0:
+    print(num, "is positive or zero.")
+else:
+    print(num, "is negative.")
+```
+* For num = 10, the output is:
+```
+10 is a positive or zero.
+```
+
+* For num = -3, the output is:
+  ```
+  -3 is negative.
+  ```
+</section>
+       <section>
+<h3>if..elif..else Statement</h3>
+<div class="container" style=" display: flex;"> <!--text-align: left;-->
+  <div class="col" style=" flex: 1;">
+    <ul style="font-size: .8em">
+      <li>Syntax:
+    <pre class="python"><code>
+if test expression:
+    statements of if
+elif other test expression:
+    statements of elif
+else:
+    statements of else 
+    </code></pre> </li>
+    <li>elif: stands for else if</li>
+    <li>Allows to check multiple conditions</li>
+    <li>The if block can have  multiple elif blocks but only one else block.</li>
+  </ul>
+  </div>
+  <div class="col" style=" flex: 1;">
+    <img src="https://cdn.programiz.com/sites/tutorial2program/files/Python_if_elif_else_statement.jpg">
+  </div>
+</div>
+  </section>
+
+  <section data-markdown>              
+#### Example
+```python
+num = int(input())
+if num > 0:
+    print("Positive number.")
+elif num == 0:
+    print("Zero.")
+else:
+    print("Negative number.")
+```
+* For num = 10, :
+```
+Positive number.
+```
+
+* For num = -3, :
+  ```
+  Negative number.
+  ```
+* For num = 0, :
+ ```
+ Zero
+ ```
+</section>
+
+  <section>
+<h3>Nested if Statements</h3>
+<div class="container" style=" display: flex;"> <!--text-align: left;-->
+  <div class="col" style=" flex: 1;">
+    <ul style="font-size: .8em">
+      <li>Conditional statements can be nested inside one another.</li>
+        <pre class='python'><code>num = int(input())
+if num >= 0:
+    if num == 0:
+        print("Zero.")
+    else:
+        print("Positive number.")
+else:
+    print("Negative number")</code></pre>
+    </ul>
+  </div>
+</div>
+  </section>
+  <section>
+  <h3>Execution</h3>
+  <iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=num%20%3D%20int%28input%28%29%29%0Aif%20num%20%3E%3D%200%3A%0A%20%20%20%20if%20num%20%3D%3D%200%3A%0A%20%20%20%20%20%20%20%20print%28%22Zero.%22%29%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print%28%22Positive%20number.%22%29%0Aelse%3A%0A%20%20%20%20print%28%22Negative%20number%22%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe> 
+  </section>
+
+
+	<section>
+		<h3>References</h3>
+		<ol>
+			<li>
+          <a href="https://pythontutor.com/">https://pythontutor.com/</a> 
+			</li>
+      <li>
+          <a href="https://www.programiz.com/python-programming/if-elif-else">https://www.programiz.com/python-programming/if-elif-else</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
