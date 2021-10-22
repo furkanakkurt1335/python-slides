@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 Lab3</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+### For Loops
+* Iterates over a collection of objects
+* Syntax:
+  ```python
+  for item in sequence:
+      statements
+  ```
+* At each iteration
+    * `item` takes the value of the next element in `sequence`
+    * statements are executed for `item`
+
+       
+        </section>
+        <section >
+<h3> For Loops</h3>
+Loop continues until the last item is reached.
+<img src="https://cdn.programiz.com/sites/tutorial2program/files/forLoop.jpg">
+
+         </section>
+
+        <section> 
+<h4> Example: Iterating a sequence of numbers </h3>
+<pre class='python'><code>
+for i in [1, 2, 3, 4]:
+    print(i)   
+
+</code></pre>
+<h4>Output</h4>
+<pre><code>1
+2
+3
+4</code></pre>
+
+    </section>
+    <section>
+<h4>Execution</h4>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=for%20i%20in%20%5B1,%202,%203,%204%5D%3A%0A%20%20%20%20print%28i%29%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+    </section>
+    <section data-markdown>
+### The `range()` function
+* Generates numbers in given range.
+* `range(start, stop, step_size)`
+    * **start:** lower limit. By default, 0.
+    * **stop:** upper limit. Numbers are generated up to this number.
+    * **step_size:** difference between each number. By default, 1.
+* start and step_size are the optional arguments. 
+
+    </section>
+  <section data-auto-animate>
+                        <h3>Examples</h3>
+
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5):
+    print(i, end=', ')
+</code></pre>
+                </div>
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5, 10):
+    print(i, end=', ')
+</code></pre>
+                </div>
+            
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(2,8,2):
+    print(i, end=', ')
+</code></pre>
+                </div>
+            </div>
+    </section>
+  
+<section data-auto-animate>
+                        <h3>Examples</h3>
+
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>0, 1, 2, 3, 4</code></pre>
+                </div>
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5, 10):
+    print(i, end=', ')
+</code></pre>
+
+                </div>
+            
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(2,8,2):
+    print(i, end=', ')
+</code></pre>
+                </div>
+            </div>
+    </section>
+  
+  
+<section data-auto-animate>
+                        <h3>Examples</h3>
+
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>0, 1, 2, 3, 4</code></pre>
+                </div>
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5, 10):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>5, 6, 7, 8, 9</code></pre>
+                </div>
+            
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(2,8,2):
+    print(i, end=', ')
+</code></pre>
+
+                </div>
+            </div>
+    </section>
+  
+
+<section data-auto-animate>
+                        <h3>Examples</h3>
+
+             <div class="container" style=" display: flex;"> <!--text-align: left;-->
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>0, 1, 2, 3, 4</code></pre>
+                </div>
+
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(5, 10):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>5, 6, 7, 8, 9</code></pre>
+                </div>
+            
+                <div class="col" style=" flex: 1;">
+<pre class='python'><code>
+for i in range(2,8,2):
+    print(i, end=', ')
+</code></pre>
+<h4>Output</h4>
+<pre><code>2, 4, 6</code></pre>
+                </div>
+            </div>
+    </section>
+  
+
+<section data-markdown>
+### Nested Loop
+* A loop inside the body of the outer loop.
+* In each iteration of the outer loop, inner loop execute all its iteration.
+* Syntax
+```python
+# outer for loop
+for element in sequence 
+      # inner for loop
+      for element in sequence:
+          body of inner for loop
+      body of outer for loop
+```
+</section>
+<section>
+<h4> Example: Multiplication Table</h4>
+<img src='https://pynative.com/wp-content/uploads/2021/06/python-nested-for-loop.png'>
+</section>
+<section>
+<h3>Execution</h3>
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=%23%20outer%20loop%0Afor%20i%20in%20range%281,%2011%29%3A%0A%20%20%20%20%23%20nested%20loop%0A%20%20%20%20%23%20to%20iterate%20from%201%20to%2010%0A%20%20%20%20for%20j%20in%20range%281,%2011%29%3A%0A%20%20%20%20%20%20%20%20%23%20print%20multiplication%0A%20%20%20%20%20%20%20%20print%28i%20*%20j,%20end%3D'%20'%29%0A%20%20%20%20print%28%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+</section>
+<section>
+<h4>Example: Print Triangle</h4>
+<pre class='python'><code>rows = 5
+# outer loop
+for i in range(1, rows + 1):
+    # inner loop
+    for j in range(1, i + 1):
+        print("*", end=" ")
+    print('')
+</code></pre> 
+<p style='font-size:.5em'>
+the outer loop: the number of rows print. 
+</p>
+<p style='font-size:.5em'>
+the inner loop: the total number of columns in each row.
+</p>
+</section>
+<section>
+<h3>Execution</h3> 
+<iframe width="800" height="500" frameborder="0" src="https://pythontutor.com/iframe-embed.html#code=rows%20%3D%205%0A%23%20outer%20loop%0Afor%20i%20in%20range%281,%20rows%20%2B%201%29%3A%0A%20%20%20%20%23%20inner%20loop%0A%20%20%20%20for%20j%20in%20range%281,%20i%20%2B%201%29%3A%0A%20%20%20%20%20%20%20%20print%28%22*%22,%20end%3D%22%20%22%29%0A%20%20%20%20print%28''%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+</section>
+
+	<section>
+		<h3>References</h3>
+		<ol>
+			<li>
+                <a href="https://pythontutor.com/">https://pythontutor.com/</a> 
+			</li>
+      <li>
+          <a href="https://realpython.com/python-for-loop/">https://realpython.com/python-for-loop/</a>
+      </li>
+      <li>
+          <a href="https://www.programiz.com/python-programming/for-loop">https://www.programiz.com/python-programming/for-loop</a>
+      </li>
+         <li>
+          <a href="https://pynative.com/python-nested-loops/">https://pynative.com/python-nested-loops/</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
