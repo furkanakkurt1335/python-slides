@@ -8,11 +8,11 @@
 * Statements
 * Functions
 
-## [Lab2](lab2.html)
+## [Lab 2](lab2.html)
 
 * Functions
 
-## [Lab3](lab3.html)
+## [Lab 3](lab3.html)
 
 * For Loops
 
