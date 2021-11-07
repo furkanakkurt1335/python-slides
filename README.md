@@ -11,7 +11,13 @@
 * [Lab3](https://bouncmpe150.github.io/python-slides/lab3.html)
   * For Loops
 
+* [Lab4](https://bouncmpe150.github.io/python-slides/lab4.html)
+  * Conditional Statements
+  
 
+* [Lab5](https://bouncmpe150.github.io/python-slides/lab5.html)
+  * While loops
+  
 ## Credits
 
 * [Hakim El-Hattab](https://twitter.com/hakimel)
