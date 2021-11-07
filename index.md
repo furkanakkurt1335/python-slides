@@ -16,6 +16,12 @@
 
 * For Loops
 
+## [Lab 4](lab4.html)
+
+* Conditional Statements
+  
+## [Lab 5](lab5.html)
+  * While Loops
 
 ## Contributors
 
