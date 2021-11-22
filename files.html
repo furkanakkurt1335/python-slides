@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 - File</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+        ### Files
+
+- Named locations on disk.
+- Used to permanently store data 
+- File operation order:
+  - Open the file
+  - Read/write
+  - Close the file
+
+</section>
+
+<section data-markdown>
+
+### Opening files: open(filepath, mode)
+
+```python
+f = open('test_file.txt', 'r')
+```
+
+**Modes:** 
+
+- **'r'** for reading, 
+- **'w'** for writing, 
+- **'a'** for appending
+
+</section>
+
+<section data-markdown>
+
+### Closing files
+
+After performing file operations, the file needs to be closed properly.
+
+```python
+f = open("test_file.txt")
+# perform file operations
+f.close()
+```
+
+To close the file automatically, **with** block can also be used.  
+
+```python
+with open("test.txt") as f:
+   # perform file operations
+```
+
+</section>
+
+
+
+<section data-markdown>
+
+### Writing to files
+
+**Modes:** 
+
+- **w:** overwrite into the file
+- **a:** appends to the existing file
+
+```python
+with open('test.txt', 'w') as f:
+    f.write('First line\n')
+    f.write('Second line\n')
+    f.write('Last line\n')
+```
+
+</section>
+
+<section data-markdown>
+
+### Reading files
+
+**Line by line with a for loop**
+
+```python
+with open('test.txt', 'r') as f:
+    for line in f:
+        print(line, end='')
+```
+
+</section>
+
+<section data-markdown>
+
+### Reading files
+
+**Reading the whole file**
+
+```python
+f = open('test.txt')
+content = f.read()
+print(content)
+```
+
+</section>
+
+<section data-markdown>
+
+### Reading files
+
+**Line by line with readline()**
+
+```python
+f = open('test.txt')
+print(f.readline())
+print(f.readline())
+print(f.readline())
+```
+
+</section>
+
+<section data-markdown>
+
+### Reading files
+
+**Reading all lines**
+
+```python
+f = open('test.txt')
+print(f.readlines())
+```
+
+</section>
+
+	<section>
+		<h3>References</h3>
+		<ol>
+      <li>
+          <a href="https://www.programiz.com/python-programming/file-operation">https://www.programiz.com/python-programming/file-operation</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>

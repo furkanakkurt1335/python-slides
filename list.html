@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 - List</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+### Lists
+* Created by placing elements inside square brackets [], separated by commas.
+* A list can have arbitrary number of items.
+* The items may be of different types (integer, float, string, etc.).
+
+```python
+my_list = [] # empty list
+
+my_list = [1, 2, 3] # list of integers
+
+my_list = [1, "Hello", 3.4] # list with mixed data types
+```
+*  A list can also have another list as an item.
+```python
+# nested list
+my_list = ["mouse", [8, 4, 6], ['a']]
+```
+  </section>
+  <section data-markdown>              
+### List Index: To access elements
+* The index operator [] is used to access an item in a list.
+* Indices start at 0. So, a list having 5 elements will have an index from 0 to 4.
+* The index must be an integer.
+
+```python
+my_list = ['p', 'r', 'o', 'b', 'e']
+print(my_list[0])  # p
+print(my_list[2])  # o
+print(my_list[4])  # e
+
+# Nested List
+n_list = ["Happy", [2, 0, 1, 5]]
+print(n_list[0][1])
+print(n_list[1][3])
+
+# Error! Only integer can be used for indexing
+print(my_list[4.0])
+```
+</section>
+<section>
+<h3>Negative indexing</h3>
+<p>Python allows negative indexing for its sequences.</p>
+<p>The index of -1 refers to the last item, -2 to the second last item and so on.</p>
+<pre class='python'><code>my_list = ['p','r','o','b','e']
+print(my_list[-1]) # last item
+print(my_list[-5]) # fifth last item</code></pre>
+<img src='https://cdn.programiz.com/sites/tutorial2program/files/python-list-index.png' height='250px;'>
+
+</section>
+
+<section data-markdown>
+### List Slicing 
+* A range of items can be accessed using the slicing operator :
+
+```python
+my_list = ['p','r','o','g','r','a','m','i','z']
+
+print(my_list[2:5]) # elements from index 2 to index 4
+print(my_list[5:])  # elements from index 5 to end
+print(my_list[:])   # elements beginning to end
+```
+Output
+```
+['o', 'g', 'r']
+['a', 'm', 'i', 'z']
+['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+```
+
+</section>
+<section data-markdown>
+### Add/Change Elements
+* Lists are mutable, meaning their elements can be changed.
+* Assignment operator = for changing an item or a range of items.
+
+```python
+odd = [2, 4, 6, 8]
+
+odd[0] = 1 # change the 1st item    
+print(odd)
+
+odd[1:4] = [3, 5, 7] # change 2nd to 4th items
+print(odd)
+```       
+Output
+```
+[1, 4, 6, 8]
+[1, 3, 5, 7]
+```
+</section>
+<section data-markdown>
+### Add/Change Elements
+
+We can also use `append()` and `extend()` methods
+```python
+odd = [1, 3, 5]
+odd.append(7)
+print(odd)
+odd.extend([9, 11, 13])
+print(odd)
+```
+
+Output
+```
+[1, 3, 5, 7]
+[1, 3, 5, 7, 9, 11, 13]
+```
+</section>
+<section data-markdown>
+### Add/Change Elements
+* `+` operator can be used to combine two lists. This is called concatenation.
+* `*` operator repeats a list for the given number of times.
+
+```python
+odd = [1, 3, 5]
+print(odd + [9, 7, 5])
+print(["re"] * 3)
+```
+
+Output
+```
+[1, 3, 5, 9, 7, 5]
+['re', 're', 're']
+```
+</section>
+<section data-markdown>
+### Add/Change Elements
+* It is possible to insert one item at a desired location by using the method `insert()` 
+* Multiple items can be inserted by squeezing it into an empty slice of a list.
+
+```python
+odd = [1, 9]
+odd.insert(1,3)
+print(odd)
+odd[2:2] = [5, 7]
+print(odd)
+```
+
+Output
+```
+[1, 3, 9]
+[1, 3, 5, 7, 9]
+```
+</section>
+<section data-markdown>
+### Remove Elements
+* remove() to remove the given item 
+* pop() to remove an item at the given index.
+
+```python
+my_list = ['p','r','o','b','l','e','m']
+my_list.remove('p')
+
+# Output: ['r', 'o', 'b', 'l', 'e', 'm']
+print(my_list)
+
+# Output: 'o'
+print(my_list.pop(1))
+
+# Output: ['r', 'b', 'l', 'e', 'm']
+print(my_list)
+```
+  </section>
+
+<section data-markdown>
+### Useful Methods
+* index() returns the index of the first matched item
+* count() returns the count of the number of items passed as an argument
+* sort()  sort items in a list in ascending order
+* reverse() reverse the order of items in the list
+
+</section>
+<section data-markdown>
+### Useful Methods
+```python
+my_list = [3, 8, 1, 6, 8, 8, 4]
+# Add 'a' to the end
+my_list.append('a')
+
+# Output: [3, 8, 1, 6, 0, 8, 4, 'a']
+print(my_list)
+
+# Index of first occurrence of 8
+print(my_list.index(8))   # Output: 1
+
+# Count of 8 in the list
+print(my_list.count(8))  # Output: 3 
+```
+</section>
+
+<section data-markdown>
+### List Comprehension
+* A list comprehension consists of an expression followed by for statement inside square brackets.
+
+```python
+pow2 = [2 ** x for x in range(10)]
+print(pow2)
+```
+
+Output
+```
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+```
+This code is equivalent to:
+```
+pow2 = []
+for x in range(10):
+   pow2.append(2 ** x)
+```  
+</section>
+<section data-markdown>
+### Membership Test
+* Test if an item exists in a list or not, using the keyword in.
+```python
+my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
+print('p' in my_list)     # Output: True
+print('a' in my_list)     # Output: False
+print('c' not in my_list) # Output: True
+```
+  
+</section>
+<section data-markdown>
+### Iterating through a list
+* We can iterate through each item in a list.
+
+```python
+for fruit in ['apple','banana','mango']:
+    print("I like",fruit)
+```
+
+Output
+```
+I like apple
+I like banana
+I like mango
+```
+</section>
+<section data-markdown>
+### Tuples
+* Ordered collection of objects
+* Equivalent to Lists except:
+  * Tuples are created by enclosing the elements in parentheses (()) instead of square brackets ([]).
+  * Tuples are immutable, meaning that the elements cannot be modified.
+```python
+ t = ('foo', 'bar', 'baz', 'qux', 'quux', 'corge')
+print(t[0])     # indexing
+print(t[1::2])  # slicing
+```
+</section>
+<section data-markdown>
+### Tuples are immutable
+```python
+t = ('foo', 'bar', 'baz', 'qux', 'quux', 'corge')
+t[2] = 'Bark!'
+Traceback (most recent call last):
+  File "<pyshell#65>", line 1, in <module>
+    t[2] = 'Bark!'
+TypeError: 'tuple' object does not support item assignment
+```
+</section>
+<section data-markdown>
+### Packing and Unpacking
+```python
+t = ('foo', 'bar', 'baz', 'qux', 'quux', 'corge')
+(s1, s2, s3, s4) = t
+print(s1)
+print(s2)
+print(s3)
+print(s4)
+```
+Note that the number of variables on the left must match the number of values in the tuple while unpacking.
+</section>
+	<section>
+		<h3>References</h3>
+		<ol>
+      <li>
+          <a href="https://www.programiz.com/python-programming/list">https://www.programiz.com/python-programming/list</a>
+      </li>
+      <li>
+          <a href="https://realpython.com/python-lists-tuples/">https://realpython.com/python-lists-tuples/</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>

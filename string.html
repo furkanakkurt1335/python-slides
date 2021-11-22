@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 - String</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+        <section>
+<h3>String</h3>
+<div class="container" style=" display: flex;"> <!--text-align: left;-->
+    <ul style="font-size: .8em">
+      <li>A sequence of characters</li>
+      <li>Created by enclosing characters inside a single quote or double-quotes.
+    <pre class="python"><code>a_string = 'Hello'
+print(a_string)
+
+other_string = "Hello"
+print(other_string)
+
+another_string = """Hello, welcome to
+           the world of Python"""
+print(another_string)</code></pre> </li>
+  </ul>
+</div>
+  </section>
+  <section data-markdown>              
+### How to access characters in a string?
+
+* Indexing: Individual characters using indexing
+  * Index starts from 0.
+  * Index must be an integer. Otherwise, `TypeError` occurs.
+  * Negative indexing: The index of `-1` refers to the last item, `-2` to the second last item and so on.
+
+
+```python
+my_string = 'cmpe150_fall21'
+print('my_string = ', my_string)
+
+print('my_string[0] = ', my_string[0]) # first character
+
+print('my_string[-1] = ', my_string[-1]) # last character
+```
+</section>
+<section data-markdown>
+### Indices
+```python
+my_string = 'programiz'
+```
+![](https://cdn.programiz.com/sites/tutorial2program/files/element-slicling.jpg)
+</section>
+<section data-markdown>
+### Indexing Errors
+```python
+# index must be in range
+>>> my_string[15]  
+...
+IndexError: string index out of range
+
+# index must be an integer
+>>> my_string[1.5] 
+...
+TypeError: string indices must be integers
+```
+  </section>
+<section data-markdown>
+### How to access a range of characters?
+
+* Slicing: A range of characters using slicing. 
+  * With the slicing operator `:`(colon).
+
+```python
+str = 'programiz'
+# slicing 2nd to 5th character
+print('str[1:5] = ', str[1:5])
+
+# slicing 6th to 2nd last character
+print('str[5:-2] = ', str[5:-2])
+```
+**Output:**
+
+```
+str[1:5] =  rogr
+str[4:-2] =  ram
+```
+  </section>
+
+<section data-markdown>
+### How to change or delete a string?
+* Strings are immutable.  
+* This means that elements of a string cannot be changed once they have been assigned. 
+* We can simply reassign different strings to the same name.
+
+```python
+>>> my_string = 'programiz'
+>>> my_string[5] = 'a'
+...
+TypeError: 'str' object does not support item assignment
+>>> my_string = 'Python'
+>>> my_string
+'Python'
+```
+</section>
+<section data-markdown>
+### String Operations
+* `Concatenation`: Joining of two or more strings into a single one.
+* `+` operator performs concatenation.
+* `*` operator can be used to repeat the string for a given number of times.
+
+```python
+str1 = 'Hello'
+str2 = 'World!'
+print('str1 + str2 = ', str1 + str2)  # using +
+print('str1 * 3 =', str1 * 3)         # using *
+```
+
+**Output:**
+```
+str1 + str2 =  HelloWorld!
+str1 * 3 = HelloHelloHello
+```
+
+</section>
+
+<section>
+  
+<h3> Iterating through a string</h3>
+
+<bold>Example:</bold> Counting `l` letters.
+
+<pre class='python'><code>count = 0
+for letter in 'Hello World':
+    if letter == 'l':
+        count += 1
+print(count, 'letters found')
+</code></pre>
+Output
+<pre><code>3 letters found</code></pre>
+</section>
+
+
+<section data-markdown>
+### String Membership Test
+
+Test if a substring exists within a string or not, using the keyword `in`.
+
+```python
+>>> 'a' in 'program'
+True
+>>> 'at' not in 'battle'
+False
+```
+
+</section>
+
+<section data-markdown>
+### Common String Methods
+```python
+>>> "PrOgRaMiZ".lower()
+'programiz'
+>>> "PrOgRaMiZ".upper()
+'PROGRAMIZ'
+>>> "This will split all words into a list".split()
+['This', 'will', 'split', 'all', 'words', 'into', 'a', 'list']
+>>> ' '.join(['This', 'will', 'join', 'words', 'into', 'a', 'string'])
+'This will join all words into a string'
+>>> 'Happy New Year'.find('ew')
+7
+>>> 'Happy New Year'.replace('Happy','Brilliant')
+'Brilliant New Year'
+```
+</section>
+
+<section data-markdown>
+### Case Conversion
+* s.capitalize(): Capitalizes the string.
+
+```python
+>>> s = 'foO BaR BAZ quX'
+>>> s.capitalize()
+'Foo bar baz qux'
+```
+* s.swapcase(): Swaps case of alphabetic characters.
+
+```python
+>>> 'FOO Bar 123 baz qUX'.swapcase()
+'foo bAR 123 BAZ Qux'
+```
+* s.title(): Converts the target string to “title case.”
+
+```python
+>>> 'the sun also rises'.title()
+'The Sun Also Rises'
+```
+</section>
+<section data-markdown>
+### Case Conversion
+
+> s.lower(): Converts alphabetic characters to lowercase.
+
+```python
+>>> 'FOO Bar 123 baz qUX'.lower()
+'foo bar 123 baz qux'
+
+```
+
+> s.upper(): Converts alphabetic characters to uppercase.
+
+```python
+>>> 'FOO Bar 123 baz qUX'.upper()
+'FOO BAR 123 BAZ QUX'
+```
+
+</section>
+
+<section data-markdown>
+### Find and Replace
+* Ways of searching the target string for a specified substring.
+
+* s.count(sub, start, end): Counts occurrences of a substring in the target string.
+
+```python
+>>> 'foo goo moo'.count('oo')
+3
+```
+
+The count is restricted to the number of occurrences within the substring indicated by `start` and `end`:
+
+```python
+>>> 'foo goo moo'.count('oo', 0, 8)
+2
+```
+</section>
+<section data-markdown>
+### Find and Replace
+
+* s.startswith(prefix, start, end): Determines whether the target string starts with a given substring.
+
+```python
+>>> 'foobar'.startswith('foo')
+True
+>>> 'foobar'.startswith('bar')
+False
+```
+
+* s.endswith(suffix, start, end): Determines whether the target string ends with a given substring.
+
+```python
+>>> 'foobar'.endswith('bar')
+True
+>>> 'foobar'.endswith('baz')
+False
+```
+
+</section>
+<section data-markdown>
+### Find and Replace
+
+* s.find(sub, start, end): Searches the string for a given substring. Returns `-1` if `sub` is not found.
+
+```python
+>>> 'foo bar foo baz foo qux'.find('foo')
+0
+>>> 'foo bar foo baz foo qux'.find('grault')
+-1
+```
+* s.index(sub, start, end): Searches the string for a given substring. Raises an exception if `sub` is not found rather than returning `-1`.
+
+```python
+>>> 'foo bar foo baz foo qux'.index('grault')
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    'foo bar foo baz foo qux'.index('grault')
+ValueError: substring not found
+```
+</section>
+<section data-markdown>
+### Character Classification
+
+* s.isalnum(): Determines whether the string consists of alphanumeric characters.
+
+```python
+>>> 'abc123'.isalnum()
+True
+>>> 'abc$123'.isalnum()
+False
+```
+* s.isalpha(): Determines whether the string consists of alphabetic characters.
+
+```
+>>> 'ABCabc'.isalpha()
+True
+>>> 'abc123'.isalpha()
+False
+```
+
+</section>
+<section data-markdown>
+### Character Classification
+* s.isdigit(): Determines whether the string consists of digit characters.
+
+```python
+>>> '123'.isdigit()
+True
+>>> '123abc'.isdigit()
+False
+```
+
+* s.istitle(): Determines whether the target string is title cased.
+
+```
+>>> 'This Is A Title'.istitle()
+True
+>>> 'This is a title'.istitle()
+False
+>>> 'Give Me The #$#@ Ball!'.istitle()
+True
+```
+</section>
+<section data-markdown>
+### Character Classification
+* s.islower(): Determines whether the string’s alphabetic characters are lowercase.
+
+```python
+>>> 'abc1$d'.islower()
+True
+>>> 'Abc1$D'.islower()
+False
+
+```
+* s.isupper(): Determines whether the target string’s alphabetic characters are uppercase.
+
+```python
+>>> 'ABC'.isupper()
+True
+>>> 'ABC1$D'.isupper()
+True
+>>> 'Abc1$D'.isupper()
+False
+```
+</section>
+
+<section data-markdown>
+  
+### String Formatting
+
+* s.replace(old, new, count): Replaces occurrences of a substring within a string.
+
+```python
+>>> 'foo bar foo baz foo qux'.replace('foo', 'grault')
+'grault bar grault baz grault qux'
+```
+
+* If `count` is specified, a maximum of `count` replacements are performed:
+
+```python
+>>> 'foo bar foo baz foo qux'.replace('foo', 'grault', 2)
+'grault bar grault baz foo qux'
+```
+</section>
+<section data-markdown>
+### String Formatting
+
+* s.strip(chars): Strips characters from the left and right ends of a string.
+```python
+>>> s = '   foo bar baz\t\t\t'
+>>> s = s.strip()
+>>> s
+'foo bar baz'
+```
+```
+>>> 'www.realpython.com'.strip('w.moc')
+'realpython'
+```
+</section>
+<section data-markdown>
+### Converting Between Strings and Lists
+
+s.join(iterable): Concatenates strings from an iterable.
+
+```python
+>>> ', '.join(['foo', 'bar', 'baz', 'qux'])
+'foo, bar, baz, qux'
+```
+
+When a string value is used as an iterable, it is interpreted as a list of the string’s individual characters:
+
+```python
+>>> list('corge')
+['c', 'o', 'r', 'g', 'e']
+
+>>> ':'.join('corge')
+'c:o:r:g:e'
+```
+</section>
+<section data-markdown>
+### Converting Between Strings and Lists
+
+* s.split(sep=None, maxsplit=-1)
+
+> Splits a string into a list of substrings.
+
+If `sep` is specified, it is used as the delimiter for splitting:
+
+```python
+>>> 'hello world'.split()
+['hello', 'world']
+>>> 'www.realpython.com'.split('.', maxsplit=1)
+['www', 'realpython.com']
+>>> 'www.realpython.com'.rsplit('.', maxsplit=1)
+['www.realpython', 'com']
+```
+</section>
+    
+
+	<section>
+		<h3>References</h3>
+		<ol>
+      <li>
+          <a href="https://realpython.com/python-strings/">https://realpython.com/python-strings/</a>
+      </li>
+      <li>
+          <a href="https://www.programiz.com/python-programming/string">https://www.programiz.com/python-programming/string</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
