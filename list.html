@@ -214,7 +214,7 @@ my_list = [3, 8, 1, 6, 8, 8, 4]
 # Add 'a' to the end
 my_list.append('a')
 
-# Output: [3, 8, 1, 6, 0, 8, 4, 'a']
+# Output: [3, 8, 1, 6, 0, 8, 8, 4, 'a']
 print(my_list)
 
 # Index of first occurrence of 8
@@ -280,8 +280,8 @@ I like mango
   * Tuples are immutable, meaning that the elements cannot be modified.
 ```python
  t = ('foo', 'bar', 'baz', 'qux', 'quux', 'corge')
-print(t[0])     # indexing
-print(t[1::2])  # slicing
+print(t[0])     # indexing, Output = 'foo'
+print(t[1:4])  # slicing, Output = ('bar', 'baz', 'qux')
 ```
 </section>
 <section data-markdown>
@@ -299,11 +299,13 @@ TypeError: 'tuple' object does not support item assignment
 ### Packing and Unpacking
 ```python
 t = ('foo', 'bar', 'baz', 'qux', 'quux', 'corge')
-(s1, s2, s3, s4) = t
+(s1, s2, s3, s4, s5, s6) = t
 print(s1)
 print(s2)
 print(s3)
 print(s4)
+print(s5)
+print(s6)
 ```
 Note that the number of variables on the left must match the number of values in the tuple while unpacking.
 </section>
