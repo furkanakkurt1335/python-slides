@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CMPE150 - Fall2021 - Sets</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150</h3>
+            <h3>Introduction to Computing</h3>
+	    <h3>Fall 2021</h3>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+                <small>Created by <a href="http://gokceuludogan.github.io">Gökçe Uludoğan</a></small>
+            </p>
+        </section>
+<section data-markdown>
+### Sets
+* An unordered collection of items.
+* Mutable (i.e. the items can be added or removed.)
+* Used to perform set operations like union, intersection, etc.
+* Created by using either curly braces {} or the built-in set() function.
+
+```python
+my_set = {1, 2, 3}
+my_set = set([1.0, "Hello", (1, 2, 3)])
+```
+</section>
+
+<section data-markdown>
+### Properties
+* Each item is unique (no duplicates).
+* Each item must be immutable (cannot be changed).
+
+```python
+my_set = {1, 2, 3, 4, 3, 2}
+print(my_set)
+
+my_set = set([1, 2, 3, 2])
+print(my_set)
+
+my_set = {1, 2, [3, 4]}
+```
+Output
+```python
+{1, 2, 3, 4}
+{1, 2, 3}
+Traceback (most recent call last):
+  File "<string>", line 15, in <module>
+    my_set = {1, 2, [3, 4]}
+TypeError: unhashable type: 'list'
+```
+</section>
+
+
+<section data-markdown>
+### Modifying a set
+* add(): adds a single item
+* update(): adds multiple items
+
+```python
+y_set = {1, 3}
+print(my_set)
+
+my_set.add(2)
+print(my_set)
+
+my_set.update([2, 3, 4])
+print(my_set)
+```
+
+Output
+
+```
+{1, 3}
+{1, 2, 3}
+{1, 2, 3, 4}
+```
+</section>
+<section data-markdown>
+### Removing elements from a set
+* discard(): removes an item. 
+* remove(): removes an item. Raises an error if the item is not present. 
+
+```python
+my_set = {1, 3, 4, 5, 6}
+my_set.discard(4)
+print(my_set)
+my_set.remove(6)
+print(my_set)
+my_set.remove(2)
+```
+
+Output
+
+```
+{1, 3, 5, 6}
+{1, 3, 5}
+Traceback (most recent call last):
+  File "<string>", line 28, in <module>
+KeyError: 2
+```
+</section>
+
+<section data-markdown>
+### Removing elements from a set
+* pop(): removes and returns an arbitrary item. 
+
+```python
+my_set = {1, 3, 4, 5, 6}
+print(my_set.pop())
+```
+</section>
+
+<section data-markdown>
+### Set operations
+
+**Union**
+
+```python
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print(A | B) # or print(A.union(B))
+```
+
+Output
+```
+{1, 2, 3, 4, 5, 6, 7, 8}
+```
+ 
+</section>
+<section data-markdown>
+### Set operations
+
+**Intersection**
+
+```python
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print(A & B) # or print(A.intersection(B))
+```
+
+Output
+```
+{4, 5}
+```
+  
+</section>
+<section data-markdown>
+### Set operations
+
+**Set Difference**
+
+```python
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print(A - B) # or print(A.difference(B))
+print(B - A) # or print(B.difference(A))
+
+```
+
+Output
+```
+{1, 2, 3}
+{6, 7, 8}
+```
+  
+</section>
+<section data-markdown>
+### Set operations
+
+**Symmetric Difference**
+
+```python
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+print(A ^B) # or print(A.symmetric_difference(B))
+```
+
+Output
+```
+{1, 2, 3, 6, 7, 8}
+```  
+</section>
+	<section>
+		<h3>References</h3>
+		<ol>
+      <li>
+          <a href="https://www.programiz.com/python-programming/set">https://www.programiz.com/python-programming/set</a>
+      </li>
+		</ol>
+	</section>
+
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
