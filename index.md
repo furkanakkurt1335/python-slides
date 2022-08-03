@@ -1,29 +1,24 @@
-# CMPE150 Fall2021 Lab Slides
+# CMPE150 Fall 2021 Lab Slides
 
-## [Lab 1](lab1.html)
+## [Variables & Statements](lab1.html)
 
-* Introduction
-* Variables
-* Expression
-* Statements
-* Functions
+## [Functions](lab2.html)
 
-## [Lab 2](lab2.html)
+## [For Loops](lab3.html)
 
-* Functions
-
-## [Lab 3](lab3.html)
-
-* For Loops
-
-## [Lab 4](lab4.html)
-
-* Conditional Statements
+## [Conditional Statements](lab4.html)
   
-## [Lab 5](lab5.html)
-  * While Loops
+## [While Loops](lab5.html)
 
+## [Lists](list.html)
 
+## [String](string.html)
+
+## [Dictionary](dictionary.html)
+
+## [Set](set.html)
+
+## [Files](files.html)
 
 ## Contributors
 
