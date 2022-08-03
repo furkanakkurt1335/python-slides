@@ -1,22 +1,24 @@
 # CmpE150 - Fall 2021 - Lab Slides
 
-* [Lab1](https://bouncmpe150.github.io/python-slides/lab1.html) 
-  * Variables
-  * Statements
-  * Functions (Briefly)
+* [Variables & Statements](https://bouncmpe150.github.io/python-slides/lab1.html)
 
-* [Lab2](https://bouncmpe150.github.io/python-slides/lab2.html)
-  * Functions
+* [Functions](https://bouncmpe150.github.io/python-slides/lab2.html)
+
+* [For Loops](https://bouncmpe150.github.io/python-slides/lab3.html)
+
+* [Conditional Statements](https://bouncmpe150.github.io/python-slides/lab4.html)
   
-* [Lab3](https://bouncmpe150.github.io/python-slides/lab3.html)
-  * For Loops
+* [While Loops](https://bouncmpe150.github.io/python-slides/lab5.html)
 
-* [Lab4](https://bouncmpe150.github.io/python-slides/lab4.html)
-  * Conditional Statements
-  
+* [Lists](https://bouncmpe150.github.io/python-slides/list.html)
 
-* [Lab5](https://bouncmpe150.github.io/python-slides/lab5.html)
-  * While loops
+* [String](https://bouncmpe150.github.io/python-slides/string.html)
+
+* [Dictionary](https://bouncmpe150.github.io/python-slides/dictionary.html)
+
+* [Set](https://bouncmpe150.github.io/python-slides/set.html)
+
+* [Files](https://bouncmpe150.github.io/python-slides/files.html)
   
 ## Credits
 
