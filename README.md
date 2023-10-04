@@ -1,4 +1,4 @@
-# CmpE150 - Fall 2021 - Lab Slides
+# CmpE150 - Fall 2023 - Lab Slides
 
 * [Variables & Statements](https://bouncmpe150.github.io/python-slides/lab1.html)
 

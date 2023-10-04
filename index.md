@@ -22,4 +22,5 @@
 
 ## Contributors
 
+* [Furkan Akkurt](https://furkanakkurt5827.space/)
 * [Gökçe Uludoğan](gokceuludogan.github.io)
