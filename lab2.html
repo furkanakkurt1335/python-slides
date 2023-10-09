@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>CMPE150 - Fall2021 Lab2</title>
+    <title>Lab 2, CMPE 150, Fall 2023</title>
 
     <link rel="stylesheet" href="reveal.js/dist/reset.css" />
     <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
@@ -27,7 +27,7 @@
         <section>
             <h3>CMPE 150</h3>
             <h3>Introduction to Computing</h3>
-	    <h3>Fall 2021</h3>
+	    <h3>Fall 2023</h3>
             <a href="http://www.boun.edu.tr">
                 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
             </a>
@@ -39,17 +39,17 @@
 ### Outline
 * How functions work 
 * How to define your function
-* How to pass arguments to function
-* How to return data from function            
+* How to pass arguments to a function
+* How to return data from a function            
         </section>
         <section data-markdown>
 ### Functions
-* In math:  `z = f(x, y)`
+* In math: `z = f(x, y)`
 * In programming: a block of code that perfoms a specific task 
 * Python functions
     * Built-in 
-        * E.g. `print()`, `input()`
-    * User defined
+        * e.g. `print()`, `input()`
+    * User-defined
          </section>
         <section data-markdown> 
 ### Built-in functions
@@ -302,14 +302,14 @@ a = 2
   
   <section data-markdown>
 ### Types of Namespaces
-1. Built-In
+1. Built-in
 2. Global
 3. Local
   </section>
   
   <section data-markdown>
-### 1. The Built-In Namespace
-* Contains the names of all of Python’s built-in objects
+### 1. The Built-in Namespace
+* Contains the names of all of Python's built-in objects
 * Available at all times when Python is running 
   * Object types: int, float, bool, str, 
   * Built-in functions: print(), input(), help(), len(), zip(), max()
@@ -392,7 +392,7 @@ print("Main program continues")
 
             <div class="col" style=" flex: 1;">
               <h3>Variable Scope</h3>
-              <p>If your code refers to the name x,  Python searches for x in the following namespaces in the order shown:</p>
+              <p>If your code refers to the name `x`,  Python searches for `x` in the following namespaces in the order shown:</p>
               <ol>
                 <li><strong>L</strong>ocal</li>
                 <li><strong>G</strong>lobal</li>
@@ -507,9 +507,9 @@ f()
          <h4>Output</h4>
          <pre class='python'><code>local</code></pre>
    <ul>
-     <li><p style="font-size:25px"><strong>Line 1</strong> defines x in the global scope.</p></li>
-     <li><p style="font-size:25px"><strong>Line 4</strong> defines x again in the local scope.</p></li>
-     <li><p style="font-size:25px">According to the LGB rule, the interpreter finds the value from the <strong>local space</strong> before looking in the global space.</p></li>
+     <li><p style="font-size:25px"><strong>Line 5</strong> defines `x` in the global scope.</p></li>
+     <li><p style="font-size:25px"><strong>Line 2</strong> defines `x` again in the local scope.</p></li>
+     <li><p style="font-size:25px">According to the <strong>LGB</strong> rule, the interpreter finds the value from the <strong>local space</strong> before looking in the global space.</p></li>
    </ul>
            </div>
        </div>
@@ -571,7 +571,7 @@ print(x)
          <pre class='python'><code>local
 global</code></pre>
 <ul>
-  <li><p style="font-size:25px"><strong>Line 1</strong>: x in the global scope. <strong>Line 4</strong>: x in the local scope.</p></li>
+  <li><p style="font-size:25px"><strong>Line 5</strong>: `x` in the global scope. <strong>Line 2</strong>: `x` in the local scope.</p></li>
   <!--<li><p style="font-size:25px"><strong>Line 4</strong> defines x again in the local scope.</p></li>-->
   <li><p style="font-size:25px">When f() is called, the local namespace of f() is active, therefore x = "local".</p></li>
   <li><p style="font-size:25px">After f() terminates, the local namespace of f() terminates too. Therefore, back in the main program, x = "global".</p></li>
@@ -637,15 +637,15 @@ f()
   print(x)
 NameError: name 'x' is not defined</code></pre>
    <ul>
-     <li><p style="font-size:25px">x isn't defined at all.</p></li>
-     <li><p style="font-size:25px">The print() statement generates a NameError exception.</p></li>
+     <li><p style="font-size:25px">`x` isn't defined at all.</p></li>
+     <li><p style="font-size:25px">The `print()` statement generates a `NameError` exception.</p></li>
    </ul>
            </div>
        </div>
 </section>
 
 	<section>
-		<img src='https://i.imgflip.com/4180at.jpg'> 
+		<img src='https://media.makeameme.org/created/thanks-for-listening-a142a4cf5e.jpg'> 
 	</section>
 
 	<section>
