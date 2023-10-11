@@ -1,14 +1,14 @@
 # CMPE 150 Fall 2023 Lab Slides
 
-## [Variables & Statements](lab1.html)
+## [Variables & Statements](intro-variables.html)
 
-## [Functions](prev-lab2.html)
+## [Functions](functions.html)
 
-## [For Loops](prev-lab3.html)
+## [For Loops](loops.html)
 
-## [Conditional Statements](prev-lab4.html)
+## [Conditional Statements](conditionals.html)
   
-## [While Loops](prev-lab5.html)
+## [While Loops](while.html)
 
 ## [Lists](list.html)
 

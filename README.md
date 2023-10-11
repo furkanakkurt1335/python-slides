@@ -1,24 +1,24 @@
-# CmpE150 - Fall 2023 - Lab Slides
+# Lab Slides for CMPE 150, Fall 2023
 
-* [Variables & Statements](https://bouncmpe150.github.io/python-slides/lab1.html)
+* [Variables & Statements](intro-variables.html)
 
-* [Functions](https://bouncmpe150.github.io/python-slides/lab2.html)
+* [Functions](functions.html)
 
-* [For Loops](https://bouncmpe150.github.io/python-slides/lab3.html)
+* [For Loops](loops.html)
 
-* [Conditional Statements](https://bouncmpe150.github.io/python-slides/lab4.html)
+* [Conditional Statements](conditionals.html)
   
-* [While Loops](https://bouncmpe150.github.io/python-slides/lab5.html)
+* [While Loops](while.html)
 
-* [Lists](https://bouncmpe150.github.io/python-slides/list.html)
+* [Lists](list.html)
 
-* [String](https://bouncmpe150.github.io/python-slides/string.html)
+* [String](string.html)
 
-* [Dictionary](https://bouncmpe150.github.io/python-slides/dictionary.html)
+* [Dictionary](dictionary.html)
 
-* [Set](https://bouncmpe150.github.io/python-slides/set.html)
+* [Set](set.html)
 
-* [Files](https://bouncmpe150.github.io/python-slides/files.html)
+* [Files](files.html)
   
 ## Credits
 
