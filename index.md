@@ -2,13 +2,13 @@
 
 ## [Variables & Statements](lab1.html)
 
-## [Functions](lab2.html)
+## [Functions](prev-lab2.html)
 
-## [For Loops](lab3.html)
+## [For Loops](prev-lab3.html)
 
-## [Conditional Statements](lab4.html)
+## [Conditional Statements](prev-lab4.html)
   
-## [While Loops](lab5.html)
+## [While Loops](prev-lab5.html)
 
 ## [Lists](list.html)
 
