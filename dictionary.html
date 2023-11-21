@@ -40,7 +40,7 @@
         </section>
         <section data-markdown>
 ### Dictionaries
-* Created by placing dictionary items inside curly braces {} , separated by commas.
+* Created by placing dictionary items inside curly braces `{}`, separated by commas.
 * Each item is expressed as a pair (key, value)
 * Keys must be immutable.
 
@@ -99,8 +99,8 @@ Output
 <section data-markdown>              
 ### Removing Elements
 * `pop()` removes and returns a particular item.
-* `popitem()` removes and returns an arbitrary item.
-* `clear()` removes all items at once
+* `popitem()` removes and returns the last key-value pair.
+* `clear()` removes all items at once.
 
 ```python
 squares = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
@@ -137,8 +137,8 @@ print(list(sorted(marks.keys())))
 ```
 Output
 ```
-('Math', 0)
 ('English', 0)
+('Math', 0)
 ('Science', 0)
 ['English', 'Math', 'Science']
 ```
