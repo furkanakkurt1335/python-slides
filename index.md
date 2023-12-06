@@ -16,6 +16,8 @@
 
 ## [Dictionary](dictionary.html)
 
+## [Class](class.html)
+
 ## [Set](set.html)
 
 ## [Files](files.html)

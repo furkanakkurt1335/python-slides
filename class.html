@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Class - CMPE 150, Fall 2023</title>
+
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="reveal.js/plugin/highlight/monokai.css"
+      id="highlight-theme"
+    />
+  </head>
+  <body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>CMPE 150 - Introduction to Computing</h3>
+      	    <h3>Fall 2023</h3>
+            <h2>Class</h2>
+            <a href="http://www.boun.edu.tr">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Bo%C4%9Fazi%C3%A7i_University_logo.svg/2056px-Bo%C4%9Fazi%C3%A7i_University_logo.svg.png" alt="reveal.js logo" style="height: 140px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <p>
+              <small>Created by <a href="https://furkanakkurt5827.space/">Furkan Akkurt</a></small>
+            </p>
+        </section>
+        <section data-markdown>
+### Classes
+
+- Classes provide a means of bundling data and functionality together.
+- Creating a new class creates a new type of object.
+
+```python
+  class MyClass:
+      x = 5
+```
+        </section>
+    </div>
+</div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+ 	slideNumber: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+      });
+    </script>
+  </body>
+</html>
