@@ -47,7 +47,7 @@
 ```
         </section>
         <section data-markdown>
-### The __init__ Method
+### The \_\_init\_\_ Method
 
 - `__init__` is a special method to initialize an object out of a class by its attributes.
 
@@ -57,6 +57,90 @@ class Person:
         self.name = name
         self.age = age
 ```
+        </section>
+        <section data-markdown>
+### Methods
+
+- Functions of a class are called methods used to define behaviors of an object.
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+```
+        </section>
+
+        <section data-markdown>
+### Inheritance
+
+- Helps to define a class that inherits all the methods and properties from *another* class.
+
+```python
+class Student(Person): # Student class inheriting from Person class
+  def __init__(self, name, age, year):
+    super().__init__(name, age)
+    self.graduationyear = year
+```
+        </section>
+
+        <section data-markdown>
+### Encapsulation
+
+- Encapsulation involves restricting access to methods and variables.
+- This prevents data from being modified directly, ensuring data integrity.
+
+```python
+class Computer:
+    def __init__(self):
+        self.__maxprice = 900
+
+    def get_selling_price(self):
+        print(f"Selling Price: {self.__maxprice}")
+```
+        </section>
+
+        <section data-markdown>
+### Polymorphism
+
+- Polymorphism allows for methods in the child class to have the same name as in their parent class.
+- This supports different behaviors for the same method in different classes.
+
+```python
+class Bird:
+    def intro(self):
+        print("There are many species of birds.")
+
+    def flight(self):
+        print("Most species can fly but some cannot.")
+```
+        </section>
+
+        <section data-markdown>
+### Class and Instance Variables
+
+- Class variables are shared by all instances of a class.
+- Instance variables are unique to each instance.
+
+```python
+class Dog:
+    animal = 'dog'  # Class variable
+    
+    def __init__(self, name):
+        self.name = name  # Instance variable
+```
+        </section>
+
+        <section>
+          <h3>References</h3>
+          <ol>
+            <li>
+                <a href="https://chat.openai.com">ChatGPT 4</a>
+            </li>
+          </ol>
         </section>
     </div>
 </div>
