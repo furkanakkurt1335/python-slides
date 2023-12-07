@@ -106,16 +106,27 @@ class Computer:
         <section data-markdown>
 ### Polymorphism
 
-- Polymorphism allows for methods in the child class to have the same name as in their parent class.
+- Polymorphism allows for methods in the child class to implement a method with the same name as defined in their parent class.
 - This supports different behaviors for the same method in different classes.
 
 ```python
 class Bird:
     def intro(self):
-        print("There are many species of birds.")
-
+        print("There are many types of birds.")
+        
     def flight(self):
-        print("Most species can fly but some cannot.")
+        print("Most of the birds can fly but some cannot.")
+
+class Sparrow(Bird):
+    def flight(self):
+        print("Sparrows can fly.")
+
+# Polymorphism in action
+bird = Bird()
+sparrow = Sparrow()
+
+bird.flight()    # Output: Most of the birds can fly but some cannot.
+sparrow.flight() # Output: Sparrows can fly.
 ```
         </section>
 
