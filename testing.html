@@ -44,9 +44,9 @@
 - Use `assert` to validate the correctness of functions.
 
 ```python
-  def test_is_prime():
-      assert is_prime(2) == True, "2 should be prime"
-      assert is_prime(3) == True, "3 should be prime"
+def test_is_prime():
+    assert is_prime(2) == True, "2 should be prime"
+    assert is_prime(3) == True, "3 should be prime"
 ```
         </section>
 
@@ -57,11 +57,11 @@
 - Use tools like print statements or a debugger.
 
 ```python
-  def is_prime(n):
-      for i in range(2, n):
-          if n % i == 0:
-              return False
-      return True
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
 ```
         </section>
 
@@ -72,11 +72,11 @@
 - Use `try-except` blocks to handle exceptions gracefully.
 
 ```python
-  def safe_divide(a, b):
-      try:
-          return a / b
-      except ZeroDivisionError:
-          return "Cannot divide by zero."
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Cannot divide by zero."
 ```
         </section>
 
@@ -87,12 +87,12 @@
 - If an assertion fails, the program will raise an `AssertionError`.
 
 ```python
-  def factorial(n):
-      assert isinstance(n, int) and n >= 0, "Input must be a non-negative integer"
-      if n == 0:
-          return 1
-      else:
-          return n * factorial(n - 1)
+def factorial(n):
+    assert isinstance(n, int) and n >= 0, "Input must be a non-negative integer"
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 ```
         </section>
 
@@ -103,13 +103,13 @@
 - Use `raise` to raise an error.
 
 ```python
-    def factorial(n):
-        if not isinstance(n, int) or n < 0:
-            raise ValueError("Input must be a non-negative integer")
-        if n == 0:
-            return 1
-        else:
-            return n * factorial(n - 1)
+def factorial(n):
+    if not isinstance(n, int) or n < 0:
+        raise ValueError("Input must be a non-negative integer")
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 ```
         </section>
 
