@@ -18,6 +18,8 @@
 
 ## [Class](class.html)
 
+## [Testing](testing.html)
+
 ## [Set](set.html)
 
 ## [Files](files.html)
