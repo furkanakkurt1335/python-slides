@@ -20,6 +20,8 @@
 
 ## [Testing](testing.html)
 
+## [Recursion](recursion.html)
+
 ## [Set](set.html)
 
 ## [Files](files.html)
